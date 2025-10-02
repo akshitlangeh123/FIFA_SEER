@@ -1,0 +1,152 @@
+version: 2
+
+models:
+  - name: dim_clubs
+    description: "Dimension table for club"
+    columns:
+      - name: club_name
+        description: "Name of the club"
+        tests:
+          - not_null
+          - unique
+      - name: league_name
+        description: "Name of the league for this club"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
+  - name: dim_leagues
+    description: "Dimension table for league"
+    columns:
+      - name: league_name
+        description: "Name of the league"
+        tests:
+          - not_null
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
+  - name: dim_players
+    description: "Dimenion table for players"
+    columns:
+      - name: long_name
+        description: "Name of the Player"
+        tests:
+        - not_null
+          unique
+      - name: nationality
+        description: "Nationality of the player"
+      - name: club_name
+        description: "Club of the player"
+      - name: league_name
+        description: "Name of the league for the player"
+      - name: player_positions
+        description: "Positions player can play in"
+      - name: preferred_foot
+        description: "Preferred foot for the player"
+      - name: work_rate
+        description: "How hard does the player works"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
+  - name: fct_club_attributes
+    description: "Fact table for the club"
+    columns:
+      - name: club_name
+        description: "Name of the club's attributes"
+        tests:
+          - not_null
+          - unique
+      - name: num_club_players
+        description: "Number of players in the club"
+      - name: avg_player_rating
+        description: "Average Player rating in the club"
+      - name: avg_player_potential_rating
+        description: "Average player potential rating in the club"
+      - name: avg_club_age
+        description: "Average age of player in the club"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
+  - name: fct_club_financial
+    description: "Fact table for the club's finances"
+    columns:
+      - name: club_name
+        description: "Name of the club"
+        tests:
+          - not_null
+          - unique
+      - name: max_club_wage
+        description: "Maximum player's wage in the club"
+      - name: avg_club_wage
+        description: "Average player's wage of the club"
+      - name: total_club_value
+        description: "Total value of the club"
+      - name: avg_club_value
+        description: "Average value of the club"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
+  - name: fct_league_attributes
+    description: "Fact table for league's attributes"
+    columns:
+      - name: league_name
+        description: "Name of the league"
+        tests:
+          - not_null
+          - unique
+      - name: num_league_players
+        description: "Number of players in the league"
+      - name: num_clubs
+        description: "Number of clubs in the league"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
+  - name: fct_league_financial
+    description: "Fact table for league's financials"
+    columns:
+      - name: league_name
+        description: "Name of the league"
+        tests:
+          - not_null
+          - unique
+      - name: max_league_wage
+        description: "Maximum wage of the player in the league"
+      - name: avg_league_wage
+        description: "Average wage of the league"
+      - name: total_league_value
+        description: "Total league value"
+      - name: avg_league_value
+        description: "Average value of the league"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
+  - name: fct_player_attributes
+    description: "Fact table for Player's attributes"
+    columns:
+      - name: long_name
+        description: "Name of the player"
+        tests:
+          - not_null
+          - unique
+      - name: nationality
+        description: "Nationality of the player"
+      - name: age
+        description: "Age of the player"
+      - name: height_cm
+        description: "Height of the player"
+      - name: weight_kg
+        description: "Weight of the player"
+      - name: overall
+        description: "Overall rating of the player"
+      - name: potential
+        description: "Potential rating of the player"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
+  - name: fct_player_financial
+    description: "Fact table for Player's financials"
+    columns:
+      - name: long_name
+        description: "Name of the player"
+        tests:
+          - not_null
+          - unique
+      - name: nationality
+        description: "Nationality of the player"
+      - name: value_eur
+        description: "Value of the player"
+      - name: wage_eur
+        description: "Wages of the player"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"

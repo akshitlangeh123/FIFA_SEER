@@ -1,0 +1,49 @@
+version: 2
+
+sources:
+  - name: fifa_db
+    database: fifa_db
+    schema: fifa_db
+    tables:
+      - name: players
+
+models:
+  - name: stg_players
+    description: "Staging table for players data in hive table"
+    columns:
+      - name: long_name
+        description: "Player's full name"
+        tests:
+          - not_null
+      - name: age
+        description: "Player's age"
+        tests:
+          - not_null
+      - name: dob
+        description: "Player's Date Of Birth"
+      - name: height_cm
+        description: "Player's height in centimeters"
+      - name: weight_kg
+        description: "Player's weight in kilograms"
+      - name: nationality
+        description: "Player's home nation"
+      - name: club_name
+        description: "Player's club"
+      - name: league_name
+        description: "League to which Plater's club belongs to"
+      - name: overall
+        description: "Player's overall football playing rating"
+      - name: potential
+        description: "Player's football potential rating"
+      - name: value_eur
+        description: "Player's value in Football Market in Euros"
+      - name: wage_eur
+        description: "Player's wages for the respective club"
+      - name: player_positions
+        description: "Player's positions on the field"
+      - name: preferred_foot
+        description: "Player's preferred playing feet"
+      - name: work_rate
+        description: "Player's ability to work on the pitch"
+      - name: updated_at
+        description: "Timestamp at when the value was added"

@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Airflow
+airflow_home/
+logs/
+*.db
+*.pid
+
+# dbt
+target/
+
+# OS
+.DS_Store
+

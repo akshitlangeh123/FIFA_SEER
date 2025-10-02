@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: int_player_clubs
+    description: "Stats for Football Clubs"
+    columns:
+      - name: club_name
+        description: "Name of the club"
+        tests:
+          - not_null
+          - unique
+      - name: num_club_players
+        description: "Number of Players playing for the club"
+      - name: max_club_wage
+        description: "Maximum wage being earned by the player in respective club"
+      - name: avg_club_wage
+        description: "Average wage being earned by the player in respective club"
+      - name: total_club_value
+        description: "Total value of the club based upon player's values"
+      - name: avg_club_value
+        description: "Average value of the club based upon player's values"
+      - name: avg_player_rating
+        description: "Average player rating for the club"
+      - name: avg_player_potential_rating
+        description: "Average Potential ratings for the players in the club"
+      - name: avg_club_age
+        description: "Average player age for the club"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
+  - name: int_club_league
+    description: "Stats for Football Leagues"
+    columns:
+      - name: league_name
+        description: "Name of the League"
+        tests:
+          - not_null
+          - unique
+      - name: num_league_players
+        description: "Number of Players playing in the league"
+      - name: num_clubs
+        description: "Number of clubs in the league"
+      - name: max_league_wage
+        description: "Maximum wage being earned by the player in respective league"
+      - name: avg_league_wage
+        description: "Average wage being earned by the player in respective league"
+      - name: total_league_value
+        description: "Total value of the league based upon player's values"
+      - name: avg_league_value
+        description: "Average value of the league based upon player's values"
+      - name: updated_at
+        description: "Latest timestamp for the update/addition of a value"
