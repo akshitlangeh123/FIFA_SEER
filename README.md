@@ -10,8 +10,7 @@
 - Stores cleaned and transformed data in **Hive** for analytics.
 - Models data with **dbt** (dimension and fact tables) to create a “gold” layer.
 - Orchestrates the pipeline with **Airflow DAGs** (`fifa_pipeline`).
-- Optional **Flask API** to serve processed data.
-- Designed as a **resume-ready portfolio project** for data engineering.
+- **Flask API** to serve processed data.
 
 ## Architecture
 
