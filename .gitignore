@@ -2,7 +2,7 @@
 __pycache__/
 *.pyc
 .venv/
-airflow_venv
+airflow_venv/
 airflow/airflow.cfg
 
 # Airflow
