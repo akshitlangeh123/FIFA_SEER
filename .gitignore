@@ -1,19 +1,10 @@
-# Python
 __pycache__/
 *.pyc
 .venv/
 airflow_venv/
 airflow/airflow.cfg
-
-# Airflow
 logs/
 *.db
 *.pid
-
-# dbt
 target/
-
-# OS
-.DS_Store
-
 eda_bronze.ipynb
