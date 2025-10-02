@@ -2,7 +2,7 @@
 __pycache__/
 *.pyc
 .venv/
-venv/
+airflow_venv/
 
 # Airflow
 airflow_home/
