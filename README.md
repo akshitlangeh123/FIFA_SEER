@@ -10,8 +10,6 @@
 - Stores cleaned and transformed data in **Hive** for analytics.
 - Models data with **dbt** (dimension and fact tables) to create a “gold” layer.
 - Orchestrates the pipeline with **Airflow DAGs** (`fifa_pipeline`).
-- **Flask API** to serve processed data.
-
 
 ## Architecture
 ![FIFA_SEER](https://github.com/user-attachments/assets/57abfc49-06b7-413a-9a12-6225a8e61a1b)
